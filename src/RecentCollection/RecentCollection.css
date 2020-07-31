@@ -25,7 +25,7 @@
     width: 100%;
     align-self: 'centre';
     margin: auto 100px;
-    margin-left: 150px;
+    margin-left: 5vw;
     margin-bottom: 50px;
     animation-name: zoomIn;
 }
@@ -122,7 +122,7 @@
 
 .grid {
       display: grid;
-      grid-template-columns: 320px 320px 320px 320px;
+      grid-template-columns: 22vw 22vw 22vw 22vw;
       padding-top: 10px;
 }
 
