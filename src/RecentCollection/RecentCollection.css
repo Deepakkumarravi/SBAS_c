@@ -1,0 +1,162 @@
+.main-div {
+  padding-top: 110px;
+}
+
+.sub-container {
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 20px;
+  margin-top: 0px;
+  margin-left: 3px;
+  margin-right: 14px;
+  margin-bottom: 15px;
+}
+
+.headline {
+  font-size: 23px;
+  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  font-feature-settings: "thum";
+}
+
+.coll-container {
+    width: 100%;
+    align-self: 'centre';
+    margin: auto 100px;
+    margin-left: 150px;
+    margin-bottom: 50px;
+    animation-name: zoomIn;
+}
+
+.coll-container:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+  
+  
+#collection .coll-product-image {
+    width: 300px;
+    height: 300px;
+    transform: scale(1.3);
+    transition: .6s ease-out;
+    -webkit-backface-visibility: hidden;
+}
+  
+#collection .coll-product-image:hover {
+     transform: scale(1.6);
+}
+  
+  
+.product-offer-percentage {
+    position: relative;
+    left: 25px;
+    top: 40px;
+    background-color: skyblue;
+    z-index: 10;
+}
+  
+.product-footer {
+    margin-top: 10px;
+}
+
+.collection-overflow {
+  overflow: hidden;
+}
+  
+.product-price {
+    display: flex;
+    flex-direction: row;
+    margin: 10px auto;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+  
+  .actual-price-amout {
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: line-through;
+    margin: auto;
+  }
+  
+  .product-selling-price {
+    margin: auto;
+  }
+  
+  .saree-name {
+    justify-content: center;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    animation-fill-mode: forwards;
+  }
+  
+  
+  .addto-card {
+    display: flex;
+    background-color: rgb(49, 136, 94);
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 15px;
+    border-radius: 20px;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .addto-card:hover {
+    display: flex;
+    background-color: rgb(179, 164, 125);
+  }
+  
+  
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.grid {
+      display: grid;
+      grid-template-columns: 320px 320px 320px 320px;
+      padding-top: 10px;
+}
+
+.zoom-image-container {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  color: white; background: #666666; opacity: .8;
+  z-index: 1000;
+}
+
+.image-to-zoom {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+}
+
+.loading-collection-con {
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-text {
+  font-size: 30px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+}
+
+  
+  
+  
+  

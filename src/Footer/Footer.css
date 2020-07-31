@@ -1,0 +1,112 @@
+.footer {
+    background-color: #278d13;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    padding-left: 100px;
+}
+
+.footer-quick-link {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.links {
+    text-decoration: none;
+    color: #ffffff;	
+}
+
+.list-item {	
+    font-family: GreycliffCF-DemiBold;	
+    font-size: 16px; 
+    letter-spacing: 1px;
+    line-height: 25px;
+    margin-right: 60px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    text-transform: uppercase;
+}
+
+.links:hover {
+    color: rebeccapurple;
+}
+
+.contact-us {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.contact-text {
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    color: white;
+    font-family: NightStillComes !important;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-size: 30px;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-details-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 10px;
+}
+
+.contact-social-container {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    border-bottom: 2px solid rgba(8, 8, 8, 0.2);
+    width: fit-content;
+    font-size: 23px;
+    text-align: start;
+    font-weight: 600;
+    margin : 30px 0px;
+    z-index: 5;
+}
+
+.social-media_icon {
+    width: 30px;
+    height: 30px;
+    padding: 5px 1px 0px 3px;
+    border-radius: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.social-media_icon:hover .social-icon-footer{
+     color: black;
+}
+
+.contact-aboutus {
+    padding: 10px 100px;
+    caption-side: top;
+}
+
+.googlemap-container {
+    width: 100px;
+    height: 100px;
+}
+
+

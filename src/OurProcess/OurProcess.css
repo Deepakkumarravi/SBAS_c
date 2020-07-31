@@ -1,0 +1,130 @@
+.our-process-container-with-text {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgb(228, 236, 241); */
+}
+
+
+.our-work-process-title {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    font-style: italic;
+    color: #ebe7e7;
+    margin-bottom: 60px; 
+    width: 80%;
+    margin-left: 10%;
+    background-image: linear-gradient(to bottom, #5cc9c3 20%, #47bd74 50%);
+}
+
+.our-process-list-container {
+    list-style-type: none;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.each-process-item {
+    color: black;
+}
+
+.icon-container {
+    border: 3px solid #5c143f;
+    padding: 40px;
+}
+
+.our-process-icon-style {
+    color: #6d0062;
+}
+
+.process-number {
+    position: absolute;
+    transition: 0.1s linear;
+    background-image: linear-gradient(to right, #b95aaf 20%, #ce63a4 50%);
+    top: -30px;
+    margin-left: 20px;
+    font-weight: bold;
+    width: 40px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 10px 0px 0px 0px;
+    border: 6px solid #ffffff;
+}
+
+.goto-contact-from-our-process {
+    visibility: hidden;
+    position: absolute;
+    color: white;
+    transition: 0.1s linear;
+    background-image: linear-gradient(to right, #b95aaf 20%, #ce63a4 50%);
+    top: 60px;
+    margin-left: 110px;
+    font-weight: bold;
+    width: 40px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 13px 3px 0px 0px;
+    border: 6px solid #ffffff;
+    cursor: pointer;
+}
+
+.icon-container:hover {
+    background-image: linear-gradient(to right, #b95aaf 20%, #b8247c 50%);
+}
+
+.icon-container:hover .process-number {
+    visibility: hidden;
+}
+
+.icon-container:hover .our-process-icon-style {
+    color: white;
+}
+
+.icon-container:hover .goto-contact-from-our-process {
+   visibility: visible;
+}
+
+.sub-process-title  {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 850px) {
+
+    .our-process-container-with-text {
+        margin-top: 50px;
+    }
+
+    .our-work-process-title {
+        margin-bottom: 30px;
+    }
+
+    .our-process-list-container {
+        flex-direction: column;
+    }
+
+    .process-number {
+       position: relative;
+       margin-left: 30px;
+       top: -30px;
+    }
+
+    .icon-container {
+        padding: 0px;
+        padding-left: 50px;
+        margin-top: 20px;
+    }
+
+    .goto-contact-from-our-process {
+        position: relative;
+        top: 0px;
+    }
+}

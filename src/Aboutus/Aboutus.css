@@ -1,0 +1,190 @@
+.about {
+    background-image: url('../Images/sareeaboutus.jpg');
+    height: 90vh;
+    width: 100%;
+}
+
+.aboutus-container {
+    padding-top: 80px;
+}
+
+.content-over-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30%;
+    right: 5%;
+}
+
+.saree-over-text-one {
+    font-size: 60px;
+    font-weight: 600;
+    font-family: NightStillComes !important;
+    color: white;
+    letter-spacing: 1px;
+    line-height: 60px;
+}
+
+.saree-over-text-two {
+    font-size: 25px;
+    font-weight: 400;
+    font-family: NightStillComes !important;
+    color: white;
+    letter-spacing: 1px;
+    line-height: 45px;
+}
+
+.contact-us-button {
+    font-family: NightStillComes !important;
+    background-color: orangered;
+    cursor: pointer;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px auto;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.about-saree-container {
+    margin: auto;
+    background-color: #59009A;
+    margin-bottom: -50px;
+    padding: 50px 0px 80px;
+}
+
+.about-saree-inner-container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+}
+
+.about-saree-container-title {
+    font-size: 42px;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.design-image {
+    margin-left: 40%;
+    width: 20%;
+    height: 5vh;
+    align-self: center;
+}
+
+.each-about-cell {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    z-index: 15;
+    width: 27%;
+    margin: 3%;
+    padding: 10px 3px;
+    background-color: white;
+    border-radius: 7%;
+}
+
+.aboutus-cell-text {
+    color: black;
+    font-size: 17px;
+    line-height: 25px;
+    white-space: pre-line;
+    padding: 0px 3%;
+}
+
+.each-cell-header {
+     font-size: 31px;
+     text-align: center;
+     padding-bottom: 10px;
+}
+
+.aboutus-cell-image {
+    width: 70%;
+    margin-left: 15%;
+    height: 200px;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+
+
+.about-bas-con {
+   width: 80%;
+   margin: auto;
+   padding: 50px 0px;
+}
+
+.about-bas-sub-title {
+    text-align: center;
+    background: transparent linear-gradient( #6ed8b5 0%, #44b9e7 100%) 0% 0% no-repeat padding-box;
+    padding: 10px 0px;
+    font-size: 26px;
+    color: white;
+    font-style: italic;
+}
+
+.about-bas-content {
+    padding: 30px 30px 0px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    background: transparent linear-gradient( #a4dff7 0%, #ffffff 100%) 0% 0% no-repeat padding-box;
+}
+
+@media screen and (max-width: 850px) {
+
+    .content-over-image {
+       top: 20%;
+    }
+
+    .saree-over-text-one {
+        font-size: 30px;
+    }
+
+    .saree-over-text-two {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .about-saree-inner-container {
+        flex-direction: column;
+    } 
+
+    .about-saree-container-title {
+        font-size: 22px;
+    }
+
+    .about-bas-con {
+        width: 90%;
+        padding: 30px 0px;
+     }
+
+    .each-about-cell {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        z-index: 15;
+        width: 90%;
+        margin: 3% 5%;
+        padding: 10px 3px;
+        background-color: white;
+        border-radius: 5%;
+    }
+
+    .aboutus-cell-image {
+        width: 70%;
+        margin-left: 15%;
+        height: 150px;
+        padding-bottom: 30px;
+    }
+
+    .design-image {
+        margin-left: 25%;
+        width: 50%;
+        height: 5vh;
+        align-self: center;
+    }
+}
+
+

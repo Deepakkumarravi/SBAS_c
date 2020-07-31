@@ -1,0 +1,195 @@
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+#overlay .overlay-body {
+  max-width: 1400px;
+  position: fixed;
+  margin: 3% auto;
+  height: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+.close-icon {
+  width: 20px;
+  height: 20px;
+}
+
+#overlay .wrapper {
+  width: 100%;
+  padding:30px 0;
+  margin: 0;
+}
+
+#overlay .overlay-header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 80%;
+  max-width: 1400px;
+}
+
+#overlay .overlay-body {
+  position: absolute;
+  width: 80%;
+  margin: 3% 10%;
+  height: auto;
+  bottom: 0;
+  background-color: rgba(255,255,255,1);
+  overflow: scroll;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+#overlay .close-img {
+  position: fixed;
+  top: 5.0525VW;
+  right: 37.370833VW;
+  width: 30px;
+  height: 30px;
+  padding-top: 10px;
+  z-index: 2;
+  background-color: #000000;
+  cursor: pointer;
+  background-color: white;
+}
+
+.close-image {
+  position: fixed;
+  top: 6.525VW;
+  right: 32.770833333333333VW;
+  z-index: 2;
+  background-color: #000000;
+  cursor: pointer;
+  background-color: white;
+}
+
+
+#overlay .freetrial-sel {
+  width: 23%;
+  margin: 5% auto;
+}
+
+
+
+
+#overlay input:focus {
+  border: 1px solid #35CBB8 !important;
+  box-shadow: 0 0 1px #35CBB8 !important;  
+  outline-offset: 0px !important;
+  outline: none !important;    
+}
+
+#overlay .k-select .k-icon{
+  opacity: 0;
+}
+
+#overlay .form-field.error   {
+  border: 1px solid red
+}
+
+/* .k-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} */
+
+.k-list .k-item{
+  border:none !important;
+  text-transform: capitalize !important;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #000000 !important;
+  opacity: 0.8;
+}
+.k-list .k-item:hover{
+  color: #000000 !important;
+  background-color: #00D0BA !important;
+  opacity: 0.9;
+}
+.k-list .k-item.k-state-selected, .k-list-optionlabel.k-state-selected, .k-list-container .k-button:active, .k-list-container .k-button.k-state-active, .k-column-menu .k-menu:not(.k-context-menu) .k-item.k-state-selected, .k-spreadsheet-popup .k-button:active, .k-spreadsheet-popup .k-button.k-state-active, .k-spreadsheet-popup .k-button.k-state-selected, .k-menu-group .k-item.k-state-selected, .k-menu.k-context-menu .k-item.k-state-selected {
+  background-color: #00D0BA !important;
+  color: #000000 !important;
+  /* opacity: 0.9; */
+}
+#overlay .k-select {
+  background-image: url("/assets/images/ic_drop down-grey.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15px;
+}
+
+#overlay .k-dropdown {
+  border: 1px solid rgba(0,0,0,.2); 
+}
+
+#overlay .k-dropdown.error {
+  border: 1px solid red;
+}
+
+#overlay .k-dropdown .k-dropdown-wrap {
+  border:none;
+  /* background-color: #D6B981; */
+  background-image: none;
+  background:none;
+  padding:3px 0px;
+}
+
+#overlay .k-dropdown .k-dropdown-wrap.k-state-focused,
+#overlay .k-dropdown .k-dropdown-wrap:hover, 
+#overlay .k-dropdown .k-dropdown-wrap.k-state-hover {
+  background-color: #FFFFFF;
+  background-image: none;
+  background:none;
+  padding:3px 0px;
+  box-shadow: none !important;
+}
+
+#overlay .k-dropdown-wrap .k-input {
+  font-family: "GreycliffCF-Regular";
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  border-radius: 3px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  background-color: #ffffff;
+  opacity: 0.8;
+} 
+
+/* .k-animation-container div {
+  background-color: #ffffff !important;
+} */
+
+.k-animation-container {
+  z-index: 9999999999 !important;
+  font-family: OpenSans-Regular;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  /* background-color: #ffffff; */
+}
+
+#overlay .k-animation-container .k-state-selected {
+  background-color: #00D0BA !important;
+  color: #FFFFFF;
+}

@@ -1,0 +1,14 @@
+@media screen and (min-width: 320px) and (max-width: 850px) {
+
+    #footer .contact-details-row {
+        flex-direction: column;
+    }
+
+    #footer .each-contact {
+        margin-bottom: 20px;
+    }
+
+    .footer {
+        padding-left: 30px;
+    }
+}
