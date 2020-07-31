@@ -98,7 +98,7 @@ export default class RecentCollection extends Component {
                                 <span className="product-selling-price">₹ 4,500</span>
                                 <span className="actual-price-amout">₹ 8,750</span>
                             </div> */}
-                                <a style={{ fontVariant: 'capatalise', textDecoration: 'none', color: 'white' }} href="/selectedproduct">
+                                <a style={{ fontVariant: 'capatalise', textDecoration: 'none', color: 'white' }} href="/contactus">
                                     <span id="add-to-card" className="addto-card">Order Now</span></a>
                             </div>
                         </div>
