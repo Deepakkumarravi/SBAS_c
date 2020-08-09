@@ -55,11 +55,56 @@ import collection54 from '../Collection_img/collection54.jpg'
 import collection55 from '../Collection_img/collection55.jpg'
 import collection56 from '../Collection_img/collection56.jpg'
 import collection57 from '../Collection_img/collection57.jpg'
+import recentImg1 from '../RecentImage/recent_1.jpg'
+import recentImg2 from '../RecentImage/recent_2.jpg'
+import recentImg3 from '../RecentImage/recent_3.jpg'
+import recentImg4 from '../RecentImage/recent_4.jpg'
+import recentImg5 from '../RecentImage/recent_5.jpg'
+import recentImg6 from '../RecentImage/recent_6.jpg'
+import recentImg7 from '../RecentImage/recent_7.jpg'
+import recentImg8 from '../RecentImage/recent_8.jpg'
+import recentImg9 from '../RecentImage/recent_9.jpg'
+import recentImg10 from '../RecentImage/recent_10.jpg'
+import recentImg11 from '../RecentImage/recent_11.jpg'
+import recentImg12 from '../RecentImage/recent_12.jpg'
+import recentImg13 from '../RecentImage/recent_13.jpg'
+import recentImg14 from '../RecentImage/recent_14.jpg'
+import recentImg15 from '../RecentImage/recent_15.jpg'
+import recentImg16 from '../RecentImage/recent_16.jpg'
+import recentImg17 from '../RecentImage/recent_17.jpg'
+import recentImg18 from '../RecentImage/recent_18.jpg'
+import recentImg19 from '../RecentImage/recent_19.jpg'
+import recentImg20 from '../RecentImage/recent_20.jpg'
+import recentImg21 from '../RecentImage/recent_21.jpg'
+import recentImg22 from '../RecentImage/recent_22.jpg'
+import recentImg23 from '../RecentImage/recent_23.jpg'
+import recentImg24 from '../RecentImage/recent_24.jpg'
+import recentImg25 from '../RecentImage/recent_25.jpg'
+import recentImg26 from '../RecentImage/recent_26.jpg'
+import recentImg27 from '../RecentImage/recent_27.jpg'
+import recentImg28 from '../RecentImage/recent_28.jpg'
+import recentImg29 from '../RecentImage/recent_29.jpg'
+import recentImg30 from '../RecentImage/recent_30.jpg'
+import recentImg31 from '../RecentImage/recent_31.jpg'
+import recentImg32 from '../RecentImage/recent_32.jpg'
+import recentImg33 from '../RecentImage/recent_33.jpg'
+import recentImg34 from '../RecentImage/recent_34.jpg'
+import recentImg35 from '../RecentImage/recent_35.jpg'
+import recentImg36 from '../RecentImage/recent_36.jpg'
+import recentImg37 from '../RecentImage/recent_37.jpg'
+import recentImg38 from '../RecentImage/recent_38.jpg'
+import recentImg39 from '../RecentImage/recent_39.jpg'
+import recentImg40 from '../RecentImage/recent_40.jpg'
 import Zoom from 'react-reveal/Zoom'
 import Loading from '../Images/loader.svg'
-import {Img} from 'react-image'
+import { Img } from 'react-image'
 
-const names = [collection24, collection25, collection26, collection27, collection28, collection29, collection30, collection31,
+const names = [
+    recentImg1, recentImg2, recentImg3, recentImg4, recentImg5, recentImg6, recentImg7, recentImg8, recentImg9, recentImg10,
+    recentImg11, recentImg12, recentImg13, recentImg14, recentImg15, recentImg16, recentImg17, recentImg18, recentImg19, recentImg20,
+    recentImg21, recentImg22, recentImg23.recentImg24, recentImg25, recentImg26, recentImg27, recentImg28, recentImg29, recentImg30,
+    recentImg31, recentImg32, recentImg33, recentImg34, recentImg35, recentImg36, recentImg37, recentImg38, recentImg39, recentImg40,
+    collection24, collection25, collection26, collection27, collection28, collection29, collection30, collection31,
     collection1, collection2, collection3, collection4, collection5, collection6, collection7, collection8, collection9, collection10
     , collection11, collection12, collection13, collection14, collection15, collection16, collection20, collection21, collection22, collection23,
     collection32, collection33, collection34, collection35, collection36, collection37, collection38, collection39, collection40, collection41, collection42, collection43,
@@ -70,7 +115,7 @@ export default class RecentCollection extends Component {
     constructor(props) {
         super(props)
         this.state = {
-           loading: false
+            loading: false
         }
     }
 
@@ -125,11 +170,11 @@ export default class RecentCollection extends Component {
         return (
             <div className="main-div">
                 {this.state.loading &&
-                <div className =  "loading-collection-con">
-                     <div className = "loading-text">Loading our recent collections.....</div>
-                     <img src={Loading} style={{ width: '100%',height: '600px', margin: 'auto' }} />
+                    <div className="loading-collection-con">
+                        <div className="loading-text">Loading our recent collections.....</div>
+                        <img src={Loading} style={{ width: '100%', height: '600px', margin: 'auto' }} />
                     </div>
-                   
+
                 }
                 {!this.state.loading &&
                     <div className="grid">
@@ -137,7 +182,6 @@ export default class RecentCollection extends Component {
                     </div>
                 }
             </div>
-
         )
     }
 }

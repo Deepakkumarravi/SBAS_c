@@ -65,6 +65,10 @@
 
 @media screen and (max-width: 750px) {
 
+  #trending {
+    margin: 120px auto 0px;
+  }
+
   .trending-overflow {
     overflow: hidden;
     width: 220px;
