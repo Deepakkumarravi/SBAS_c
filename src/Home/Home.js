@@ -8,6 +8,7 @@ import SliderScroll from '../TrendingSlick/TrendingSlick'
 import Overlay from '../OverlayComponent/Overlay/Overlay'
 import SareeCollage from '../SareeCollages/SareeCollage'
 import OurProcess from '../OurProcess/Ourprocess'
+import YouTube from '../Youtube/YoutubePlay'
 
 export default class Home extends Component {
     constructor(props) {
@@ -58,6 +59,7 @@ export default class Home extends Component {
                 <SlideImage />
                 <SliderScroll />
                 <SareeCollage />
+                <YouTube />
                 <OurProcess />
                 <Footer />
             </div>
