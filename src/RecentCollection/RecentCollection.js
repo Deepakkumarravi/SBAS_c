@@ -102,7 +102,7 @@ import { Img } from 'react-image'
 const names = [
     recentImg1, recentImg2, recentImg3, recentImg4, recentImg5, recentImg6, recentImg7, recentImg8, recentImg9, recentImg10,
     recentImg11, recentImg12, recentImg13, recentImg14, recentImg15, recentImg16, recentImg17, recentImg18, recentImg19, recentImg20,
-    recentImg21, recentImg22, recentImg23.recentImg24, recentImg25, recentImg26, recentImg27, recentImg28, recentImg29, recentImg30,
+    recentImg21, recentImg22, recentImg23, recentImg24, recentImg25, recentImg26, recentImg27, recentImg28, recentImg29, recentImg30,
     recentImg31, recentImg32, recentImg33, recentImg34, recentImg35, recentImg36, recentImg37, recentImg38, recentImg39, recentImg40,
     collection24, collection25, collection26, collection27, collection28, collection29, collection30, collection31,
     collection1, collection2, collection3, collection4, collection5, collection6, collection7, collection8, collection9, collection10
