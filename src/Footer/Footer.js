@@ -46,7 +46,7 @@ export default class Footer extends Component {
                                     <Instagram style={{ width: '25px', height: '25px' }} className = "social-icon-footer"/> </a>
                                 </div>
                                 <div className="social-media_icon">
-                                   <a style={{ display: "table-cell", color: 'black' }} target="_blank" href={'https://wa.me/9698993511'}>
+                                   <a style={{ display: "table-cell", color: 'white' }} target="_blank" href={'https://wa.me/919698993511'}>
                                         <WhatsApp style={{ width: '25px', height: '25px' }} className="social-icon-footer" />
                                     </a>
                                 </div>
