@@ -194,7 +194,9 @@ export default class ContactUs extends Component {
                             </a>
                         </div>
                         <div className="social-media_icon-contactus">
-                            <WhatsApp style={{ width: '25px', height: '25px' }} />
+                            <a style={{ display: "table-cell", color: 'black' }} target="_blank" href={'https://wa.me/9698993511'}>
+                                <WhatsApp style={{ width: '25px', height: '25px' }} className="social-icon-footer" />
+                            </a>
                         </div>
                         <div className="social-media_icon-contactus">
                             <Youtube style={{ width: '25px', height: '25px' }} />
