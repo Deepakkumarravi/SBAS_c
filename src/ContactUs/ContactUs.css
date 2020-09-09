@@ -30,17 +30,18 @@
     padding: 10px 20px;
     height: auto;
     border: 1px solid #ccc;
-    background-color: white;
+    background-color: rgb(199, 184, 184);
+    border-radius: 3%;
 }
 
 
 .contact-details-area {
-    background-color: white;
     margin: 10px 150px;
     padding: 0px 20px;
     max-width: 380px;
     border: 1px solid #e3e3e3;
-    
+    background-color: rgb(178, 190, 218);
+    border-radius: 3%;
 }
 
 .or-text {
@@ -54,6 +55,7 @@
     font-size: 18px;
     font-weight: 500;
     width: 85%;
+    border-radius: 3%;
 }
 
 .contact-info-header {
@@ -92,6 +94,7 @@
     margin-top: 30px;
     width: 80%;
     text-align: start;
+    border-radius: 3%;
 }
 
 .address-text {
@@ -121,6 +124,12 @@
     background-size: cover;
     align-items: center;
     justify-content: center;
+}
+
+.social-media_icon-contactus :hover {
+   background-color: #bed1a2;
+   border-radius: 40%;
+   padding: 2px;
 }
 
 .please-wait-con {

@@ -4,7 +4,6 @@ import Fade from 'react-reveal/Fade';
 import Pulse from 'react-reveal/Pulse';
 import '../Aboutus/Aboutus.css'
 import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
 import silkImage from '../Images/silkImage.jpg'
 import softSilkImage from '../Images/softsilkImage.jpeg'
 import handloomPic from '../Images/weaverImage.jpg'
@@ -43,7 +42,7 @@ export default class Aboutus extends Component {
     aboutBannariAmmanSilks = () => {
         return (
             <div className = "bas-con-div">
-                <div><img src = {DesignImage} className = "design-image" style = {{marginTop: '20px'}}/></div>
+                <div><img alt = "Mugurtha silk " src = {DesignImage} className = "design-image" style = {{marginTop: '20px'}}/></div>
                 <div className="about-bas-con">
                     <Fade bottom>
                         <div className="about-bas-sub-title">Welcome to Bannari Amman Silks</div>
@@ -52,21 +51,21 @@ export default class Aboutus extends Component {
                     </div>
                     </Fade>
                 </div>
-                <div><img src = {DesignImage} className = "design-image" /></div>
+                <div><img alt = {'header-design'} src = {DesignImage} className = "design-image" /></div>
                 <div className="about-bas-con">
                     <Fade bottom>
                         <div className="about-bas-sub-title">Weaving Units</div>
                         <div className="about-bas-content">Sri Bannari Amman Silks has always been a trendsetter and the strong-hold in traditional patterns is our unique strength. Our own handloom units at Tamilnadu,Have enabled us to manufacture new designs to keep up with the currents tastes, and most importantly market high quality of silk sarees at very competitive prices.</div>
                     </Fade>
                 </div>
-                <div><img src = {DesignImage} className = "design-image" /></div>
+                <div><img alt = {'header-design'} src = {DesignImage} className = "design-image" /></div>
                 <div className="about-bas-con">
                     <Fade bottom>
                         <div className="about-bas-sub-title">Online Shopping</div>
                         <div className="about-bas-content">Sri Bannari Amman Silks has always been part of your weddings, festive seasons, and joyous occasions for years. We do not want you to miss this tradition because of constraints in time or distance. You can visit our place or contact by call and you can experience the same shopping experience from your home across the globe!</div>
                     </Fade>
                 </div>
-                <div><img src = {DesignImage} className = "design-image" /></div>
+                <div><img alt = {'header-design'} src = {DesignImage} className = "design-image" /></div>
                 <div className="about-bas-con">
                     <Fade bottom>
                         <div className="about-bas-sub-title">GST Number</div>
@@ -85,17 +84,17 @@ export default class Aboutus extends Component {
                 <div className="about-saree-inner-container">
                     <div className="each-about-cell">
                         <div className="each-cell-header">Silk Sarees</div>
-                        <Pulse><img className="aboutus-cell-image" src={silkImage} /></Pulse>
+                        <Pulse><img alt = {'Silk Sarees'} className="aboutus-cell-image" src={silkImage} /></Pulse>
                         <div className="aboutus-cell-text">{aboutSilk}</div>
                     </div>
                     <div className="each-about-cell">
                         <div className="each-cell-header">Sirumugai Soft Silk</div>
-                        <Pulse><img className="aboutus-cell-image" src={softSilkImage} /></Pulse>
+                        <Pulse><img alt = {'Sirumugai Soft Silk'} className="aboutus-cell-image" src={softSilkImage} /></Pulse>
                         <div className="aboutus-cell-text">{aboutSirumugaiSoftSilk}</div>
                     </div>
                     <div className="each-about-cell">
                         <div className="each-cell-header">Handloom</div>
-                        <Pulse><img className="aboutus-cell-image" src={handloomPic} /></Pulse>
+                        <Pulse><img alt = {'Handloom'} className="aboutus-cell-image" src={handloomPic} /></Pulse>
                         <div className="aboutus-cell-text">{aboutHandloom}</div>
                         
                     </div>

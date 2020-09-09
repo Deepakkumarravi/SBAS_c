@@ -83,6 +83,9 @@
   
   .product-selling-price {
     margin: auto;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
   }
   
   .saree-name {

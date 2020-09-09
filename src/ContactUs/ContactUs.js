@@ -13,7 +13,6 @@ import Facebook from '@material-ui/icons/Facebook'
 import Instagram from '@material-ui/icons/Instagram'
 import Youtube from '@material-ui/icons/YouTube'
 import fire from '../FirebaseConfig'
-import GoogleMap from '../Googlemap/GoogleMap'
 // import * as dotenv from 'dotenv';
 const db = fire.firestore()
 
@@ -86,7 +85,7 @@ export default class ContactUs extends Component {
     handleEmptyFormCheck = () => {
         let valid = true
         const { userName, phoneNumber, emailId } = this.state
-        if (userName == null || userName == "") {
+        if (userName === null || userName === "") {
             this.setState({ errorMessage: 'Enter your name' })
             valid = false
         }

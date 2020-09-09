@@ -32,7 +32,7 @@ class Header extends Component {
     const scrollTop = Math.floor(window.pageYOffset)
     const scrollHeight = document.body.scrollHeight
     const scrollPer = Math.floor(scrollTop / scrollHeight * 100) // calculating percentage while scrolling
-    if ((scrollPer < 3 && headRow || (scrollPer > 20 && scrollPer < 55))) {
+    if ((scrollPer < 3 && headRow) || (scrollPer > 20 && scrollPer < 55)) {
       headRow.classList.add('header-row')
       header.style.transform = 'translateY(0px)'
     }

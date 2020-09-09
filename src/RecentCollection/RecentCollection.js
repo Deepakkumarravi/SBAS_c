@@ -21,7 +21,8 @@ export default class RecentCollection extends Component {
 
     getUploadCollections = () => {
         networkManager.getUploadCollections().then(response => {
-            if (response && response.status == 'success') {
+            if (response && response.status === 'success') {
+                console.log('Result-----getUploadCollections---------------------->',response.responseValue.data)
                 this.setState({ apiCollData: response.responseValue.data }, this.getSareeCollectionPrice)
             }
             else {
@@ -34,8 +35,8 @@ export default class RecentCollection extends Component {
     getSareeCollectionPrice = () => {
         networkManager.getSareeType().then(response => {
             const result = response.responseValue.data
-            if (response && response.status == 'success' && result.length > 0) {
-                console.log('Result--------------------------->',result)
+            if (response && response.status === 'success' && result.length > 0) {
+                console.log('Result-------getSareeType-------------------->',result)
                 this.setState({ getSareesDetails: result,selectedOption: result[0].price },this.mapPriceAndSareeCollection)
             }
             else {

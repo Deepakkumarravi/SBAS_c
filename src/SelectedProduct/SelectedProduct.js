@@ -37,7 +37,7 @@ export default class SelectedProduct extends Component {
             <div className="color-container">
                 <span className="color-hint">Click to view details</span>
                 <div className="similar-product-image-con">
-                    <img src={item} className="similar-product-image" />
+                    <img alt = {'similar product'} src={item} className="similar-product-image" />
                 </div>
             </div>
         )
