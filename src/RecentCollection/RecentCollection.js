@@ -97,7 +97,7 @@ import recentImg39 from '../RecentImage/recent_39.jpg'
 import recentImg40 from '../RecentImage/recent_40.jpg'
 import Zoom from 'react-reveal/Zoom'
 import Loading from '../Images/loader.svg'
-import { Img } from 'react-image'
+import networkManager, { BASE_DB_URL,catchErrorMessage } from '../NetworkManager'
 
 const names = [
     recentImg1, recentImg2, recentImg3, recentImg4, recentImg5, recentImg6, recentImg7, recentImg8, recentImg9, recentImg10,
@@ -115,14 +115,54 @@ export default class RecentCollection extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            loading: false
+            isLoaded: false,
+            apiCollData: []
         }
     }
 
     componentDidMount() {
-        setTimeout(() => {
-            this.setState({ loading: false })
-        }, 1000);
+        this.getUploadCollections()
+    }
+
+    getUploadCollections = () => {
+        networkManager.getUploadCollections().then(response => {
+            if (response && response.status == 'success') {
+                this.setState({ apiCollData: response.responseValue.data }, this.getSareeCollectionPrice)
+            }
+            else {
+                this.setState({ isLoaded: true, apiCollData: [] })
+                catchErrorMessage(response.message)
+            }
+        })
+    }
+
+    getSareeCollectionPrice = () => {
+        networkManager.getSareeType().then(response => {
+            const result = response.responseValue.data
+            if (response && response.status == 'success' && result.length > 0) {
+                console.log('Result--------------------------->',result)
+                this.setState({ getSareesDetails: result,selectedOption: result[0].price },this.mapPriceAndSareeCollection)
+            }
+            else {
+                this.setState({ isLoaded: true, apiCollData: [] })
+                catchErrorMessage(response.message)
+            }
+        })
+    }
+
+    mapPriceAndSareeCollection = () => {
+     const {apiCollData,getSareesDetails} = this.state
+     const newCollectionArray = apiCollData
+     apiCollData.map((item_1,index_1) => {
+        getSareesDetails.map((item_2,index_2) => {
+               if(item_1.saree_type == item_2.sareetype) {
+                newCollectionArray[index_1].saree_price  = item_2.price
+                newCollectionArray[index_1].showEditDesign = false
+                return
+               }
+         })
+     })
+     this.setState({apiCollData: newCollectionArray,isLoaded: true})
     }
 
     productDetails = (item, index) => {
@@ -131,18 +171,15 @@ export default class RecentCollection extends Component {
                 <div className="coll-container" id="collection" >
                     <div className="sub-container">
                         <div onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeave}>
-                            {/* <span className="product-offer-percentage">Offer</span> */}
                             <div onClick={() => this.onClickProduct(item)} className="collection-overflow">
-                                <img alt={`Saree collection ${index + 1}`} src={item} className="coll-product-image" alt="Recent Collections" />
+                                <img alt={`Saree collection ${index + 1}`} src={`${BASE_DB_URL}${item.saree_image}`} className="coll-product-image" alt="Recent Collections" />
                             </div>
                         </div>
                         <div>
                             <div className="product-footer">
-                                {/* <div className="saree-name">Saree Name</div>
-                            <div className="product-price">
-                                <span className="product-selling-price">₹ 4,500</span>
-                                <span className="actual-price-amout">₹ 8,750</span>
-                            </div> */}
+                                <div className="product-price">
+                                    <span className="product-selling-price">{`₹ ${item.saree_price}`}</span>
+                                </div>
                                 <a style={{ fontVariant: 'capatalise', textDecoration: 'none', color: 'white' }} href="/contactus">
                                     <span id="add-to-card" className="addto-card">Order Now</span></a>
                             </div>
@@ -162,26 +199,31 @@ export default class RecentCollection extends Component {
     }
 
     render() {
-        let productsList = []
-        names.map((item, index) => {
-            productsList.push(this.productDetails(item, index))
-        })
-
         return (
             <div className="main-div">
-                {this.state.loading &&
+                {!this.state.isLoaded &&
                     <div className="loading-collection-con">
                         <div className="loading-text">Loading our recent collections.....</div>
                         <img src={Loading} style={{ width: '100%', height: '600px', margin: 'auto' }} />
                     </div>
-
                 }
-                {!this.state.loading &&
+                {this.state.isLoaded &&
                     <div className="grid">
-                        {productsList}
+                        {this.productApiList()}
                     </div>
                 }
             </div>
         )
+    }
+   
+    productApiList = () => {
+        const apiCollData = this.state.apiCollData
+        let productsList = []
+
+        apiCollData.map((item,index) => {
+            productsList.push(this.productDetails(item, index))
+        })
+
+        return productsList
     }
 }
