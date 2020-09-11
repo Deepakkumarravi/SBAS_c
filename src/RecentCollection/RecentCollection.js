@@ -61,14 +61,24 @@ export default class RecentCollection extends Component {
      this.setState({apiCollData: newCollectionArray,isLoaded: true})
     }
 
+    arrayBufferToBase64(buffer) {
+        var binary = ''
+        var bytes = [].slice.call(new Uint8Array(buffer))
+        bytes.forEach((b) => binary += String.fromCharCode(b))
+        return window.btoa(binary)
+    }
+
     productDetails = (item, index) => {
+        var imageString = this.arrayBufferToBase64(item.my_image.data.data);
+        const imageSrc = `data:${item.my_image.contentType};base64,` + imageString
+
         return (
             <Zoom delay={100}>
                 <div className="coll-container" id="collection" >
                     <div className="sub-container">
                         <div onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeave}>
                             <div onClick={() => this.onClickProduct(item)} className="collection-overflow">
-                                <img alt={`Saree collection ${index + 1}`} src={`${BASE_DB_URL}${item.saree_image}`} className="coll-product-image" alt="Recent Collections" />
+                                <img alt={`Saree collection ${index + 1}`} src={`${imageSrc}`} className="coll-product-image" alt="Recent Collections" />
                             </div>
                         </div>
                         <div>

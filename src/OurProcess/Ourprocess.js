@@ -35,7 +35,7 @@ export default class Ourprocess extends Component {
                         </Slide>
                     </li>
                     <li >
-                        <Slide right delay = {200}>
+                        <Slide right delay = {100}>
                             <div className="each-process-item">
                                 <div className="icon-container">
                                     <div class="process-number">2</div>
@@ -51,7 +51,7 @@ export default class Ourprocess extends Component {
                         </Slide>
                     </li>
                     <li >
-                        <Slide right delay = {400}>
+                        <Slide right delay = {200}>
                             <div className="each-process-item">
                                 <div className="icon-container">
                                     <div class="process-number">3</div>
@@ -65,7 +65,7 @@ export default class Ourprocess extends Component {
                         </Slide>
                     </li>
                     <li >
-                        <Slide right delay = {600}>
+                        <Slide right delay = {300}>
                             <div className="each-process-item">
                                 <div className="icon-container">
                                     <div class="process-number">4</div>
