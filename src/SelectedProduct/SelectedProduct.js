@@ -4,9 +4,6 @@ import '../SelectedProduct/SelectedProduct.css'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import Zoom from 'react-img-zoom'
-import SareeThree from '../Images/saree_13.jpg'
-const listOfImage = [ SareeThree]
-const similarProduct = [ SareeThree]
 
 export default class SelectedProduct extends Component {
     constructor(props) {
@@ -32,17 +29,17 @@ export default class SelectedProduct extends Component {
         }
     }
 
-    showOtherColors = () => {
-        const value = similarProduct.map(item =>
-            <div className="color-container">
-                <span className="color-hint">Click to view details</span>
-                <div className="similar-product-image-con">
-                    <img alt = {'similar product'} src={item} className="similar-product-image" />
-                </div>
-            </div>
-        )
-        return value
-    }
+    // showOtherColors = () => {
+    //     const value = similarProduct.map(item =>
+    //         <div className="color-container">
+    //             <span className="color-hint">Click to view details</span>
+    //             <div className="similar-product-image-con">
+    //                 <img alt = {'similar product'} src={item} className="similar-product-image" />
+    //             </div>
+    //         </div>
+    //     )
+    //     return value
+    // }
 
     onItemClick = (index) => {
         this.setState({ index: index })
@@ -53,7 +50,7 @@ export default class SelectedProduct extends Component {
             <div>
                 <Header />
                 <div className="product-and-details">
-                    <div id='image' style={{ marginLeft: '100px', marginTop: '100px', display: 'flex', flexDirection: 'row' }}>
+                    {/* <div id='image' style={{ marginLeft: '100px', marginTop: '100px', display: 'flex', flexDirection: 'row' }}>
                         <div className="row-image" >
                             {listOfImage.map((item, index) => {
                                 return (
@@ -97,7 +94,7 @@ export default class SelectedProduct extends Component {
                                 />
                             }
                         </div>
-                    </div>
+                    </div> */}
                     <div className="product-details-list">
                         <div className="product-name">Embellished Semi Stitched Lehenga </div>
                         <div className="price">
@@ -124,7 +121,7 @@ export default class SelectedProduct extends Component {
                         <div className="color-varient">
                             <div className="colors-title">Color's</div>
                             <div className="similar-product-container">
-                                {this.showOtherColors()}
+                                {/* {this.showOtherColors()} */}
                             </div>
                         </div>
                     </div>

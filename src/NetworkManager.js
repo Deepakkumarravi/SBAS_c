@@ -34,6 +34,14 @@ const networkManager = {
     getSareeType: () => {
         const path = 'sareetype/'
         return request.get(path)
+    },
+    amazonS3_getUploadCollections: () => {
+        const path = 'amazonupload/'
+        return request.get(path)
+    },
+    getTrendingCollection: () => {
+        const path = 'trending/'
+        return request.get(path)
     }
 }
 

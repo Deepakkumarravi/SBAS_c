@@ -11,7 +11,8 @@ export default class RecentCollection extends Component {
         super(props)
         this.state = {
             isLoaded: false,
-            apiCollData: []
+            apiCollData: [],
+            getSareesDetails: []
         }
     }
 
@@ -20,9 +21,8 @@ export default class RecentCollection extends Component {
     }
 
     getUploadCollections = () => {
-        networkManager.getUploadCollections().then(response => {
+        networkManager.amazonS3_getUploadCollections().then(response => {
             if (response && response.status === 'success') {
-                console.log('Result-----getUploadCollections---------------------->',response.responseValue.data)
                 this.setState({ apiCollData: response.responseValue.data }, this.getSareeCollectionPrice)
             }
             else {
@@ -36,7 +36,6 @@ export default class RecentCollection extends Component {
         networkManager.getSareeType().then(response => {
             const result = response.responseValue.data
             if (response && response.status === 'success' && result.length > 0) {
-                console.log('Result-------getSareeType-------------------->',result)
                 this.setState({ getSareesDetails: result,selectedOption: result[0].price },this.mapPriceAndSareeCollection)
             }
             else {
@@ -53,7 +52,6 @@ export default class RecentCollection extends Component {
         getSareesDetails.map((item_2,index_2) => {
                if(item_1.saree_type == item_2.sareetype) {
                 newCollectionArray[index_1].saree_price  = item_2.price
-                newCollectionArray[index_1].showEditDesign = false
                 return
                }
          })
@@ -69,8 +67,10 @@ export default class RecentCollection extends Component {
     }
 
     productDetails = (item, index) => {
-        var imageString = this.arrayBufferToBase64(item.my_image.data.data);
-        const imageSrc = `data:${item.my_image.contentType};base64,` + imageString
+
+        // <---------------------------MoongoDb----------------------------------->
+        // var imageString = this.arrayBufferToBase64(item.my_image.data.data);
+        // const imageSrc = `data:${item.my_image.contentType};base64,` + imageString
 
         return (
             <Zoom delay={100}>
@@ -78,7 +78,7 @@ export default class RecentCollection extends Component {
                     <div className="sub-container">
                         <div onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeave}>
                             <div onClick={() => this.onClickProduct(item)} className="collection-overflow">
-                                <img alt={`Saree collection ${index + 1}`} src={`${imageSrc}`} className="coll-product-image" alt="Recent Collections" />
+                                <img alt={`Saree collection ${index + 1}`} src={item.saree_image} className="coll-product-image" alt="Recent Collections" />
                             </div>
                         </div>
                         <div>
