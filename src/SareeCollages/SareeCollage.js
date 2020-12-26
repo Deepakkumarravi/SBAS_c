@@ -7,10 +7,15 @@ import Fade from 'react-reveal/Fade';
 import Rotate from 'react-reveal/Rotate';
 import testImage from '../Images/handloomtext.png'
 import Zoom from 'react-reveal/Zoom'
-import Bounce from 'react-reveal/Bounce'
-
+import LoaderComponent from '../LoaderComponent'
 
 export default class SareeCollage extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            isHandloomImageLoaded: false
+        }
+    }
     render() {
         return (
             <div className="collage-con">
@@ -70,8 +75,10 @@ export default class SareeCollage extends Component {
                     </div>
                 </div>
                 <div className = "handloom-text-image-con">
+                    {!this.state.isHandloomImageLoaded && <LoaderComponent />}
                     <Zoom cascade >
-                    <img alt =  "Handloom" className = "handloom-text-image" src = {testImage}/>
+                    <img onLoad = {() => this.setState({isHandloomImageLoaded: true})}
+                    alt =  "Handloom" className = "handloom-text-image" src = {testImage}/>
                     </Zoom>
                 </div>
             </div>
