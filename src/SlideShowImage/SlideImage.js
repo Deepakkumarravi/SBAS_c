@@ -14,7 +14,6 @@ const properties = {
   arrows: true,
   pauseOnHover: false,
   onChange: (oldIndex, newIndex) => {
-    console.log(`slide transition from ${oldIndex} to ${newIndex}`);
   }
 }
 

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Fade from 'react-reveal/Fade'
-import InviteNow from '../../ContactUs/ContactUs'
-import CloseImage from '../../Images/closeicon.png'
+import InviteNow from '../ContactUs/ContactUs'
+import MoreInformation from '../components/MoreInfo/MoreInformation'
+import CloseImage from '../Images/closeicon.png'
 import './Overlay.css'
 import './OverlayResponsive.css'
 
@@ -15,12 +16,14 @@ class Overlay extends Component {
     this.delayHandle = this.delayHandle.bind(this)
   }
 
-  componentName() {
-    switch ('InviteNow') {
+  componentName(name) {
+    switch (name) {
       case 'InviteNow':
         return <InviteNow hideOverlay={this.props.hideOverlay} />
+      case 'MoreInfo':
+        return <MoreInformation productData = {this.props.productData} />
       default:
-        return null
+        return <MoreInformation  productData = {this.props.productData} />
     }
   }
 
@@ -51,19 +54,18 @@ class Overlay extends Component {
   }
 
   render() {
-    const component = this.componentName()
-    console.log('component', component)
+    const component = this.componentName(this.props.componentName)
+
     return (
       <Fade when={this.state.show} >
         <div id='overlay'>
-          <div>
-          <div className={'overlay-body freetrial-sel'}>
-            <div class='overlay-header'>
-              <div className='close-img' />
-              <img  src = {CloseImage} className = "close-img" onClick={this.handleAnimation}/>
-              </div>
-            {component}
-          </div>
+          <div className={'overlay-body'}>
+            <div class='overlay-header' onClick = {this.handleAnimation} >
+              <img src={CloseImage} className={'close-image'} />
+            </div>
+            <div className = {'overflow-main-component'} >
+              {component}
+            </div>
           </div>
         </div>
       </Fade>

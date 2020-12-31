@@ -4,8 +4,8 @@ import HeaderPage from '../Header/Header'
 import Footer from '../Footer/Footer'
 import SlideImage from '../SlideShowImage/SlideImage'
 import firebase from 'firebase'
-import SliderScroll from '../TrendingSlick/TrendingSlick'
-import Overlay from '../OverlayComponent/Overlay/Overlay'
+import TrendingSlick from '../TrendingSlick/TrendingSlick'
+import Overlay from '../OverlayComponent/Overlay'
 import SareeCollage from '../SareeCollages/SareeCollage'
 import OurProcess from '../OurProcess/Ourprocess'
 import YouTube from '../Youtube/YoutubePlay'
@@ -17,7 +17,9 @@ export default class Home extends Component {
             signInOverlay: false,
             user: null,
             loginText: 'Signin',
-            isOverlayVisible: false
+            isOverlayVisible: false,
+            componentName: '',
+            productData: ''
         }
     }
 
@@ -43,8 +45,8 @@ export default class Home extends Component {
         }
     }
 
-    handleOverlay = () => {
-        this.setState({ isOverlayVisible: true })
+    handleOverlay = (name,data) => {
+        this.setState({ isOverlayVisible: true,componentName: name,productData: data })
     }
 
     hideOverlay = () => {
@@ -54,10 +56,10 @@ export default class Home extends Component {
     render() {
         return (
             <div className="home" id="home">
-                 {this.state.isOverlayVisible && <Overlay hideOverlay={this.hideOverlay} />}
+                {this.state.isOverlayVisible && <Overlay hideOverlay={this.hideOverlay} componentName  = {this.state.componentName} productData = {this.state.productData} />}
                 <HeaderPage title={this.state.loginText} signinOverlay={this.signinOverlay} handleOverlay={this.handleOverlay} />
                 <SlideImage />
-                <SliderScroll />
+                <TrendingSlick handleOverlay={this.handleOverlay} />
                 <SareeCollage />
                 <YouTube />
                 <OurProcess />

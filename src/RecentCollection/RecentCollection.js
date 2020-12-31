@@ -3,6 +3,7 @@ import '../RecentCollection/RecentCollection.css'
 import '../RecentCollection/RecentCollectionResponsive.css'
 import Zoom from 'react-reveal/Zoom'
 import Loading from '../Images/loader.svg'
+import Overlay from '../OverlayComponent/Overlay'
 import networkManager, { BASE_DB_URL,catchErrorMessage } from '../NetworkManager'
 
 
@@ -12,7 +13,10 @@ export default class RecentCollection extends Component {
         this.state = {
             isLoaded: false,
             apiCollData: [],
-            getSareesDetails: []
+            getSareesDetails: [],
+            isOverlayVisible: false,
+            componentName: '',
+            productData: ''
         }
     }
 
@@ -23,7 +27,7 @@ export default class RecentCollection extends Component {
     getUploadCollections = () => {
         networkManager.amazonS3_getUploadCollections().then(response => {
             if (response && response.status === 'success') {
-                this.setState({ apiCollData: response.responseValue.data }, this.getSareeCollectionPrice)
+                this.setState({ apiCollData: response.responseValue.data.reverse() }, this.getSareeCollectionPrice)
             }
             else {
                 this.setState({ isLoaded: true, apiCollData: [] })
@@ -85,6 +89,10 @@ export default class RecentCollection extends Component {
                             <div className="product-footer">
                                 <div className="product-price">
                                     <span className="product-selling-price">{`₹ ${item.saree_price}`}</span>
+                                    <div style={{ display: 'flex', flexDirection: 'row' }} onClick={() => this.onClickMoreInfo(item, index)}>
+                                        <img style={{ width: 20, height: 20, paddingRight: 5 }} src={require('../Images/info.png')} />
+                                        <span style={{ color: 'blue' }}>{'info'}</span>
+                                    </div>
                                 </div>
                                 <a style={{ fontVariant: 'capatalise', textDecoration: 'none', color: 'white' }} href="/contactus">
                                     <span id="add-to-card" className="addto-card">Order Now</span></a>
@@ -100,13 +108,18 @@ export default class RecentCollection extends Component {
         this.setState({ zoomImage: item })
     }
 
-    productClick = () => {
+    onClickMoreInfo = (item,index) => {
+        this.setState({ isOverlayVisible: true,componentName: 'MoreInfo',productData: {data: item} })
+    }
 
+    hideOverlay = () => {
+        this.setState({ isOverlayVisible: false })
     }
 
     render() {
         return (
             <div className="main-div">
+                {this.state.isOverlayVisible && <Overlay hideOverlay={this.hideOverlay} componentName={this.state.componentName} productData={this.state.productData} />}
                 {!this.state.isLoaded &&
                     <div className="loading-collection-con">
                         <div className="loading-text">Loading our recent collections.....</div>

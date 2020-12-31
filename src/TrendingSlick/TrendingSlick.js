@@ -7,6 +7,7 @@ import '../TrendingSlick/TrendingSlickResponsive.css'
 import networkManager, {catchErrorMessage} from '../NetworkManager'
 import RightArrow from '../Images/rightArrow.png'
 import LeftArrow from '../Images/leftArrow.png'
+import Loader from "../LoaderComponent";
 
 function SampleNextArrow(props) {
   const { style, onClick } = props
@@ -48,7 +49,7 @@ export default class SimpleSlider extends Component {
   getUploadCollections = () => {
     networkManager.getTrendingCollection().then(response => {
       if (response && response.status === 'success') {
-        this.setState({ apiCollData: response.responseValue.data }, this.getSareeCollectionPrice)
+        this.setState({ apiCollData: response.responseValue.data.reverse() }, this.getSareeCollectionPrice)
       }
       else {
         this.setState({ isLoaded: true, apiCollData: [] })
@@ -61,7 +62,6 @@ export default class SimpleSlider extends Component {
     networkManager.getSareeType().then(response => {
       const result = response.responseValue.data
       if (response && response.status === 'success' && result.length > 0) {
-        console.log('getSareeType-------------------->', result)
         this.setState({ getSareesDetails: result, selectedOption: result[0].price }, this.mapPriceAndSareeCollection)
       }
       else {
@@ -93,7 +93,6 @@ export default class SimpleSlider extends Component {
     return (
       <div className="trending-container">
         <div className="image-with-offer">
-          {/* <span className="trend-offer-percentage">Offer</span> */}
           <div onClick={() => this.onClickProduct(item)} className="trending-overflow">
             <img alt={'trending sarees'} src={item.saree_image} className="trending-product-image" />
           </div>
@@ -102,6 +101,10 @@ export default class SimpleSlider extends Component {
           <div className="trending-footer">
             <div className="trending-product-price">
               <span className="product-selling-price">₹ {item.saree_price}</span>
+              <div style={{ display: 'flex', flexDirection: 'row' }} onClick={() => this.onClickMoreInfo(item, index)}>
+                <img style={{ width: 20, height: 20, paddingRight: 5 }} src={require('../Images/info.png')} />
+                <span style={{ color: 'blue' }}>{'info'}</span>
+              </div>
             </div>
             <a style={{ fontVariant: 'capatalise', textDecoration: 'none', color: 'white' }} href="/contactus">
               <span id="add-to-card" className="addto-card">Order now</span></a>
@@ -112,8 +115,11 @@ export default class SimpleSlider extends Component {
   }
 
   onPressSubmit = () => {
-    alert('Hi')
     console.log('this----------.>')
+  }
+
+  onClickMoreInfo = (item,index) => {
+    this.props.handleOverlay('MoreInfo',{data: item})
   }
 
   render() {
@@ -161,10 +167,12 @@ export default class SimpleSlider extends Component {
     return (
       <div id="trending" className="trending">
         <h2 className="title"> LATEST PRODUCTS</h2>
-        {this.state.isLoaded &&
+        {this.state.isLoaded ?
           <Slider {...settings} dots={true} arrows={true}  >
             {this.productApiList()}
           </Slider>
+          :
+          <Loader />
         }
       </div>
     );
