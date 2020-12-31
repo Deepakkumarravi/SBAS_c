@@ -11,20 +11,21 @@ export default class MoreInformation extends Component {
                 border: "",
                 blouse: "",
                 design: ""
-            }
+            },
+            sareeImage: ''
         }
     }
 
     componentDidMount() {
         const { productData } = this.props
         const description = JSON.parse(productData.data.saree_description) 
-        this.setState({ productDetails: description })
+        this.setState({ productDetails: description,sareeImage: productData.data.saree_image })
     }
 
     render() {
         return (
             <div id={'more-info'} >
-                <img src = {require('../../Images/collection26.jpeg')} className = 'product-image' />
+                <img alt = 'Silk saree' src = {this.state.sareeImage} className = 'product-image' />
                 <div className="more-product-details">
                     <div><img alt = "Mugurtha silk " src = {DesignImage} className = "more-design-pic-image" style = {{marginTop: '20px'}}/></div><br></br>
                     <div><strong>Product Details</strong></div><br></br>
