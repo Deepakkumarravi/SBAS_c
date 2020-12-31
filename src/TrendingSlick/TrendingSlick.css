@@ -92,10 +92,14 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+#trending .image-with-offer {
+}
+
 .trending-overflow {
   overflow: hidden;
   width: 290px;
   height: 290px;
+  margin: auto;
 }
 
 .custom-arrow-div {
