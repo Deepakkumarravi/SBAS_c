@@ -5,8 +5,7 @@
   z-index: 9999; 
   transition-duration: .7s;  
   margin: auto;
-  /* background-color: #26974c; */
-  background-color: #278d13;
+  background-color: #9e59b5;
   align-items: center;
 }
 
@@ -131,20 +130,10 @@
   text-transform: uppercase;
 }
 
-#header .header-row .menu-row-block li a,
-#header .header-row .menu-row-block li span {  
-  font-size: 14px;  
-}
-
 #header .menu-row-block li a:hover {
   font-family: OpenSans-SemiBold;
   color: #FFFFFF;	
   opacity: 1;
-}
-
-#header .header-row .menu-row-block li:last-child { 
-  height: 44px;
-  width: 146px;  
 }
 
 #header .menu-row-block li:last-child {

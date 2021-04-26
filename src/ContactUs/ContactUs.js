@@ -154,8 +154,8 @@ export default class ContactUs extends Component {
     contactInfo = () => {
         const mediaIconStyle = { width: '25px', height: '25px' }
         let mediaIcons = [
-            {icon: <Instagram style={mediaIconStyle} />},
-            {icon: <WhatsApp style={mediaIconStyle} />},
+            { icon: <Instagram style={mediaIconStyle} />, url: 'https://www.instagram.com/sri_bannari_amman_silks/' },
+            { icon: <WhatsApp style={mediaIconStyle} />, url: 'https://wa.me/919698993511' },
             {icon: <Facebook style={mediaIconStyle} />},
             {icon: <Youtube style={mediaIconStyle} />}
         ]
@@ -192,7 +192,7 @@ export default class ContactUs extends Component {
                     </div>
                     <div className= {'contactus-icon-container'}>
                         {mediaIcons.map((item) => {
-                            return this.constrctSocialMediaIcon(item.icon)
+                            return this.constrctSocialMediaIcon(item.icon,item.url)
                         })}
                     </div>
                 </div>
@@ -200,10 +200,12 @@ export default class ContactUs extends Component {
         )
     }
 
-    constrctSocialMediaIcon = (iconView) => {
+    constrctSocialMediaIcon = (iconView,url) => {
         return (
             <div className="social-media_icon-contactus">
-                {iconView}
+                <a style={{ display: "table-cell", color: 'white' }} target="_blank" href={url ? url : null}>
+                    {iconView}
+                </a>
             </div>
         )
     }
