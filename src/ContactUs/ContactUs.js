@@ -135,7 +135,7 @@ export default class ContactUs extends Component {
                                     <input className="text-label" type="text" placeholder={"Enter Your Phone Number"} onChange={this.onChangePhone} value={this.state.phoneNumber} />
                                     <div className="or-text">Or</div>
                                     <input className="text-label" type="text" placeholder={"Enter Your email address"} onChange={this.onChangeEmailAddress} value={this.state.emailId} />
-                                    <div style={{ marginTop: '30px' }}>
+                                    <div style={{ marginTop: '25px' }}>
                                         <textarea placeholder={'Enter message here...'} className="message-text-area" onChange={this.onChangeMessage} value={this.state.message} />
                                     </div>
                                     <button type="button" onClick={this.handleSubmit} className="submit-button ">SUBMIT</button>
@@ -152,6 +152,14 @@ export default class ContactUs extends Component {
     }
 
     contactInfo = () => {
+        const mediaIconStyle = { width: '25px', height: '25px' }
+        let mediaIcons = [
+            { icon: <Instagram style={mediaIconStyle} />, url: 'https://www.instagram.com/sri_bannari_amman_silks/' },
+            { icon: <WhatsApp style={mediaIconStyle} />, url: 'https://wa.me/919698993511' },
+            {icon: <Facebook style={mediaIconStyle} />},
+            {icon: <Youtube style={mediaIconStyle} />}
+        ]
+
         return (
             <div className="contact-details-area">
                 <div className="contact-info-header">contact info</div>
@@ -182,25 +190,22 @@ export default class ContactUs extends Component {
                         <Link className="img-contact-info" />
                         <div className="contact-sub-header">Let's Be Social</div>
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'row', paddingBottom: '10px' }}>
-                        <div className="social-media_icon-contactus">
-                            <Facebook style={{ width: '25px', height: '25px' }} />
-                        </div>
-                        <div className="social-media_icon-contactus">
-                            <a style={{ display: "table-cell", color: 'black' }} target="_blank" href={'https://www.instagram.com/sribannariammansilks/'}>
-                                <Instagram style={{ width: '25px', height: '25px' }} />
-                            </a>
-                        </div>
-                        <div className="social-media_icon-contactus">
-                            <a style={{ display: "table-cell", color: 'black' }} target="_blank" href={'https://wa.me/919698993511'}>
-                                <WhatsApp style={{ width: '25px', height: '25px' }} className="social-icon-footer" />
-                            </a>
-                        </div>
-                        <div className="social-media_icon-contactus">
-                            <Youtube style={{ width: '25px', height: '25px' }} />
-                        </div>
+                    <div className= {'contactus-icon-container'}>
+                        {mediaIcons.map((item) => {
+                            return this.constrctSocialMediaIcon(item.icon,item.url)
+                        })}
                     </div>
                 </div>
+            </div>
+        )
+    }
+
+    constrctSocialMediaIcon = (iconView,url) => {
+        return (
+            <div className="social-media_icon-contactus">
+                <a style={{ display: "table-cell", color: 'white' }} target="_blank" href={url ? url : null}>
+                    {iconView}
+                </a>
             </div>
         )
     }

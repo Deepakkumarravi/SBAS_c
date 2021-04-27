@@ -5,6 +5,8 @@ import Zoom from 'react-reveal/Zoom'
 import Loading from '../Images/loader.svg'
 import Overlay from '../OverlayComponent/Overlay'
 import networkManager, { BASE_DB_URL,catchErrorMessage } from '../NetworkManager'
+import Loader from 'react-loader-spinner'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 
 export default class RecentCollection extends Component {
@@ -117,20 +119,22 @@ export default class RecentCollection extends Component {
     }
 
     render() {
+        const {isLoaded,isOverlayVisible,componentName,productData} = this.state
         return (
             <div className="main-div">
-                {this.state.isOverlayVisible && <Overlay hideOverlay={this.hideOverlay} componentName={this.state.componentName} productData={this.state.productData} />}
-                {!this.state.isLoaded &&
-                    <div className="loading-collection-con">
-                        <div className="loading-text">Loading our recent collections.....</div>
-                        <img src={Loading} style={{ width: '100%', height: '600px', margin: 'auto' }} />
+                {isOverlayVisible &&
+                    <Overlay hideOverlay={this.hideOverlay}
+                        componentName={componentName}
+                        productData={productData}
+                    />
+                }
+                {!isLoaded &&
+                    <div className={'recent-loading-div'}>
+                        <Loader type="Circles" color="#00BFFF"
+                            height={200} width={200} visible={!isLoaded} />
                     </div>
                 }
-                {this.state.isLoaded &&
-                    <div className="grid">
-                        {this.productApiList()}
-                    </div>
-                }
+                {isLoaded && this.productApiList()}
             </div>
         )
     }
@@ -143,6 +147,10 @@ export default class RecentCollection extends Component {
             productsList.push(this.productDetails(item, index))
         })
 
-        return productsList
+        return (
+            <div className="grid">
+                {productsList}
+            </div>
+        )
     }
 }

@@ -144,19 +144,12 @@
   height: 80%;
 }
 
-.loading-collection-con {
+.recent-loading-div {
+  display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.loading-text {
-  font-size: 30px;
-  position: absolute;
-  top: 40%;
-  left: 40%;
-
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: italic;
+  margin-top: 100px;
+  margin-bottom: 200px;
 }
 
   

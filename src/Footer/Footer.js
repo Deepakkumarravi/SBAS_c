@@ -42,7 +42,7 @@ export default class Footer extends Component {
                                     <Facebook style={{ width: '25px', height: '25px' }} className = "social-icon-footer" />
                                 </div>
                                 <div className="social-media_icon">
-                                <a style={{display: "table-cell",color: 'white'}} target="_blank" href = {'https://www.instagram.com/sribannariammansilks/'}>
+                                <a style={{display: "table-cell",color: 'white'}} target="_blank" href = {'https://www.instagram.com/sri_bannari_amman_silks/'}>
                                     <Instagram style={{ width: '25px', height: '25px' }} className = "social-icon-footer"/> </a>
                                 </div>
                                 <div className="social-media_icon">
